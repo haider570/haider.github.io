@@ -18,7 +18,7 @@
     <script>
       function create()
       {       
-        fetch('https://cyntexa-f9-dev-ed.my.salesforce.com/services/data/v55.0/tooling/executeAnonymous?anonymousBody=insert%20new%20account%28name%3D%27hllo%27%29;', {
+        /*fetch('https://cyntexa-f9-dev-ed.my.salesforce.com/services/data/v55.0/tooling/executeAnonymous?anonymousBody=insert%20new%20account%28name%3D%27hllo%27%29;', {
                 headers: {
                   
                     'Authorization' : 'Bearer 00D5i000007F02e!ARkAQNWsWzQlTl6yBlAj_c9t1oeX1LTNZalANSwAM05.p6DvKmAyGMlYdgKXhs0_FokuKSjjPa8GRh48PVZ3qAoA3Q3M0cSw'
@@ -29,7 +29,22 @@
         }).then(Response=>{
             console.log(Response);
         })
-        console.log('succ');
-     }
+        console.log('succ');*/
+	      
+	      var myHeaders = new Headers();
+		myHeaders.append("Authorization", "Bearer 00D5i000007F02e!ARkAQNWsWzQlTl6yBlAj_c9t1oeX1LTNZalANSwAM05.p6DvKmAyGMlYdgKXhs0_FokuKSjjPa8GRh48PVZ3qAoA3Q3M0cSw");
+		myHeaders.append("Cookie", "BrowserId=75zxQioAEe2Av5eMf8so-w; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1");
+
+		var requestOptions = {
+		  method: 'GET',
+		  headers: myHeaders,
+		  redirect: 'follow'
+		};
+
+		fetch("https://cyntexa-f9-dev-ed.my.salesforce.com/services/data/v55.0/tooling/executeAnonymous?anonymousBody=insert%20new%20account%28name%3D%27postman2%27%29;", requestOptions)
+		  .then(response => response.text())
+		  .then(result => console.log(result))
+		  .catch(error => console.log('error', error));
+    }
     </script>
 </html>  
