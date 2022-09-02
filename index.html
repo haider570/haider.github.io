@@ -45,7 +45,7 @@
 		  redirect: 'follow'
 		};
 
-		fetch("https://cyntexa-f9-dev-ed.my.salesforce.com/services/data/v55.0/tooling/executeAnonymous?anonymousBody=insert+new+lead%28FirstName+%3D+%27"+fname+"%27+%2C+LastName+%3D+%27"+lname+"%27+%2C+Company+%3D+%27"+cname+"%27+%2C+Status%3D+%27Close+-+Converted%27%29%3B;", requestOptions)
+		fetch("https://cyntexa-f9-dev-ed.my.salesforce.com/services/data/v55.0/tooling/executeAnonymous?anonymousBody=insert+new+lead%28FirstName+%3D+%27"+fname+"%27+%2C+LastName+%3D+%27"+lname+"%27+%2C+Company+%3D+%27"+cname+"%27+%2C+Status%3D+%27Close+-+Converted%27%29%3B", requestOptions)
 		  .then(response => response.text())
 		  .then(result => console.log(result))
 		  .catch(error => console.log('error', error));
